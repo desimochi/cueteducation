@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
     const post = data?.post;
     if (!post) return {};
   
-    const siteUrl = 'https://cuet.education'; // change if needed
+    const siteUrl = 'https://cuet.education/'; // change if needed
     const postUrl = `${siteUrl}/${post.slug}`;
   
     return {
