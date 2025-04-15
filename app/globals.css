@@ -24,3 +24,138 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Custom Styles for Images */
+
+.prose img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+/* Custom Styles for Links */
+.prose a {
+  color: #d81d1d;
+  text-decoration: underline;
+}
+.prose p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #1c1b1b;
+}
+.prose h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.prose h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(to right, #fff, #f9f4f9);
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 7px 10px 15px 5px #d9d9d950;
+}
+
+.prose thead {
+  background-color: #ffeeee;
+  font-weight: bold;
+  color: #a50000;
+}
+
+.prose th, td {
+  padding: 16px 12px;
+  font-size: 15px;
+}
+
+.prose tbody tr {
+  background-color: white;
+}
+
+.prose tbody tr:hover {
+  background-color: #f9f9f9;
+}
+.prose h5{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.prose h4{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.prose ul{
+ list-style: disc;
+ list-style-position: inside;
+ margin-bottom: 10px;
+ font-size: 14px;
+}
+
+/* Add to your globals.css or Tailwind custom styles */
+.flip-box {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-box-front {
+  background-color: white !important;
+  border-right: 2px solid #f9cfcf;  /* Right border */
+  border-bottom: 2px solid #f9cfcf;
+}
+
+.flip-box-back {
+  background-color: #b1c2d4;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.flip-box img {
+  max-width: 60px; /* Adjust as needed */
+  height: auto;
+  object-fit: contain;
+}
+
+.flip-box a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  color: black !important;
+}

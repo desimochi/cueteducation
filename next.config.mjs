@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     trailingSlash: true,
-};
-
-export default nextConfig;
+    images: {
+      domains: ['mbaroi.in'],  // Add your image domain here
+    },
+  };
+  
+  export default nextConfig;

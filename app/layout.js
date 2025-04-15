@@ -1,6 +1,8 @@
 // app/layout.js
 
+import Navbar from '@/component/Navbar';
 import './globals.css';
+import Footer from '@/component/Footer';
 
 export const metadata = {
   title: 'MBA ROI - Best MBA Colleges in India',
@@ -15,6 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head /> 
       <body>
+        <Navbar/>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NSZGZ8B"
@@ -24,6 +27,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
         {children}
+        <Footer/>
       </body>
     </html>
   );

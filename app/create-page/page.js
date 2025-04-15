@@ -38,25 +38,28 @@ export default function PageCreation() {
     setLoading(true);
 
     try {
-      const response = await axios.post('/api/pages', {
-        title,
-        slug,
-        path: `/${folderPath}/${slug}`,
-        seoTitle,
-        seoDesc,
-        keywords,
-        ogTitle,
-        ogDescription,
-        ogImage,
-        twitterTitle,
-        twitterDescription,
-        twitterImage,
-        content,
-        folderPath,
-      });
+        const cleanPath = `/${[folderPath, slug].filter(Boolean).join('/')}`;
+
+        const response = await axios.post('/api/pages', {
+          title,
+          slug,
+          path: cleanPath,
+          seoTitle,
+          seoDesc,
+          keywords,
+          ogTitle,
+          ogDescription,
+          ogImage,
+          twitterTitle,
+          twitterDescription,
+          twitterImage,
+          content,
+          folderPath,
+        });
+        
 
       if (response.status === 201) {
-        router.push(`/${folderPath}/${slug}`);
+        router.push(`/${folderPath}/${slug}/`);
       }
     } catch (err) {
       setError('Error creating page.');
