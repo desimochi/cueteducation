@@ -60,7 +60,7 @@ export default function PageCreation() {
       }
     } catch (err) {
       setError('Error creating page.');
-    } finally {
+    } finally { 
       setLoading(false);
     }
   };
